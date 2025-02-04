@@ -1,0 +1,43 @@
+## Backend (Python) Requirements:
+## pip install -r requirements.txt
+
+flask==2.0.1                     # flask: Web framework for the backend API
+flask-cors==4.0.0                # flask-cors: Handling Cross-Origin Resource Sharing
+google-generativeai==0.3.0       # google-generativeai: Google's Gemini AI API integration
+python-dotenv==0.19.0            # python-dotenv: Environment variable management
+werkzeug==2.0.3                  # werkzeug: WSGI utility library for Flask
+Pillow                           # >=10.2.0,<10.3.0           # Pillow: Image processing (version compatible with facenet-pytorch)
+python-magic==0.4.27             # python-magic: File type detection
+requests==2.31.0                 # requests: HTTP requests handling
+gunicorn==21.2.0                # gunicorn: Production server
+python-multipart==0.0.6          # python-multipart: Multipart form data handling
+
+
+# npm install -g mkcert               # used for ssl certificates
+# mkcert create-ca -key -cert -ca     # create a local CA certificate
+# mkcert create-cert -key -cert -ca   # create a local certificate for the domain
+
+#create a global CA certificate 
+# mkcert create-ca -key -cert -ca     # create a global CA certificate
+# mkcert create-cert -key -cert -ca   # create a global certificate for the domain
+
+# mkcert install-cert                 # install the certificate for the domain
+# mkcert uninstall-cert               # uninstall the certificate for the domain
+
+# mkcert install-ca                   # install the CA certificate for the domain
+# mkcert uninstall-ca                 # uninstall the CA certificate for the domain
+
+# pip install flask==2.0.1 
+# flask-cors==4.0.0 
+# python-dotenv==0.19.0 
+# werkzeug==2.0.3 
+# requests==2.31.0 
+# gunicorn==21.2.0 
+# python-multipart==0.0.6
+# flask-cors 
+# google-generativeai 
+# pillow
+
+# to enter into the virtual environment named as venv
+# python -m venv venv
+# .\venv\Scripts\activate

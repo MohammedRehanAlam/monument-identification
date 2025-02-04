@@ -1,0 +1,275 @@
+:root {
+  --primary-color: #2196f3;
+  --secondary-color: #f50057;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+  --card-background: #ffffff;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all var(--transition-speed) ease;
+}
+
+.main-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #000;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.camera-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.camera-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  justify-content: center;
+  padding: 16px;
+}
+
+.image-preview-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.image-preview {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-preview:hover img {
+  transform: scale(1.05);
+}
+
+.details-section {
+  padding: 16px;
+  transition: all var(--transition-speed) ease;
+}
+
+.details-section.collapsed {
+  max-height: 0;
+  padding: 0 16px;
+  overflow: hidden;
+}
+
+.analysis-results {
+  padding: 16px;
+  background-color: rgba(33, 150, 243, 0.05);
+  border-radius: var(--border-radius);
+  margin: 16px;
+}
+
+.analysis-results pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.chat-section {
+  padding: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.pulse-animation {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.location-controls {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  margin: 16px;
+  transition: all var(--transition-speed) ease;
+}
+
+.monument-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.monument-details-form .MuiTextField-root {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.monument-details-form .MuiTextField-root:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.monument-details-form .MuiTextField-root.Mui-focused {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.monument-details-form .MuiFilledInput-root {
+  background-color: transparent !important;
+}
+
+.monument-details-form .MuiFilledInput-root:before,
+.monument-details-form .MuiFilledInput-root:after {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.monument-details-form .MuiFilledInput-root:hover:before {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.monument-details-form .MuiFilledInput-root.Mui-focused:after {
+  border-bottom-color: var(--primary-color);
+}
+
+.monument-details-form .MuiInputBase-input {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.monument-details-form .MuiInputBase-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.monument-details-form .MuiAlert-root {
+  background-color: rgba(102, 60, 0, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--border-radius);
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] .location-controls {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .monument-details-form .MuiTextField-root {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .monument-details-form .MuiTextField-root:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='dark'] .monument-details-form .MuiTextField-root.Mui-focused {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Animation for collapse */
+.MuiCollapse-root {
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.MuiCollapse-entered {
+  overflow: visible !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .location-controls {
+    margin: 12px;
+    padding: 12px;
+  }
+  
+  .monument-details-form {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .image-preview-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Theme transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

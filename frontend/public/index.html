@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0056b3" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="description"
+      content="Monument Detection Web Application"
+    />
+    <title>Monument Detection</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <script>
+      // Add this script to prevent theme flash on page load
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('dark-theme', theme);
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html> 
